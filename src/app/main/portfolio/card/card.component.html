@@ -1,0 +1,27 @@
+
+  <!-- <div class="body">
+    <span>{{prop.name}}</span>
+    <p>{{prop.summary}}</p>
+    <button class="btn btn-primary">View more</button>
+  </div>
+  <div class="tags" >
+    <div class="tag">
+      Angular
+    </div>
+  </div> -->
+
+
+<div class="card shadow text-center " style="max-width: 350px; min-width: 350px;">
+  <div class="card-bdy">
+    <h5 class="card-title">{{prop.name}}</h5>
+    <p>{{prop.summary}}</p>
+    <button class="btn btn-primary" (click)="openmodal()">View More</button>
+  </div>
+  <div class="card-footer">
+    <div class="d-flex flex-wrap justify-content-center">
+      <div *ngFor="let item of prop.tags" >
+        <div class="tag" [style.backgroundColor]="item.color">{{item}}</div>
+      </div>
+    </div>
+  </div>
+</div>

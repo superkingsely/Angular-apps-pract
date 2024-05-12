@@ -1,0 +1,22 @@
+<section class="home">
+  <div class="home-content">
+    <div class="home-row">
+      <div class="home-col">
+          <span class="card-title">About Me</span>
+          <div class="image">
+
+          </div>
+          <div class="des-about-me">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, velit adipisci. Amet molestias delectus alias quaerat ea maiores provident eius inventore nesciunt. Debitis iure et fugiat esse. Sapiente, exercitationem nisi?</p>
+          </div>
+      </div>
+      <div class="home-col">
+        <span class="card-title">{{project.name}}</span>
+        <carousel>
+          <slide *ngFor="let item of project.pictures"><div class="s-img">{{item}}</div></slide>
+        </carousel>
+        <p>{{project.summary}}</p>
+      </div>
+    </div>
+  </div>
+</section>
