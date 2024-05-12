@@ -16,6 +16,7 @@ import { ProjectsService } from './projects.service';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import {CarouselModule} from 'ngx-bootstrap/carousel';
 import {CollapseModule} from 'ngx-bootstrap/collapse';
+import {AccordionModule} from 'ngx-bootstrap/accordion';
 import { ModalComponent } from './modal/modal.component'
 import { FormsModule } from '@angular/forms';
 
@@ -39,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     ModalModule.forRoot(),
     CarouselModule.forRoot(),
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(),
+    AccordionModule.forRoot()
   ],
   providers: [ProjectsService],
   bootstrap: [AppComponent],
