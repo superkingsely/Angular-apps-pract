@@ -13,14 +13,52 @@ interface Supplier{
 
 export class AppComponent {
 
-list:string[]=[
-  'yam','beans','rice'
+suppliers:Supplier[]=[
+  {
+    name: 'dami',
+    address: 'address1',
+    phone: '08029696733',
+    email: 'superkingsely@gmail.com'
+  },
+  {
+    name: 'naza',
+    address: 'address1',
+    phone: '08029696733',
+    email: 'superkingsely@gmail.com'
+  },
+  {
+    name: 'praise',
+    address: 'address1',
+    phone: '08029696733',
+    email: 'superkingsely@gmail.com'
+  },
+  {
+    name: 'ele',
+    address: 'address1',
+    phone: '08029696733',
+    email: 'superkingsely@gmail.com'
+  },
+  {
+    name: 'chi',
+    address: 'address1',
+    phone: '08029696733',
+    email: 'superkingsely@gmail.com'
+  },
 ]
-boo:boolean=true
-isActive:boolean=true
-constructor(){
+filteredDatat:Supplier[]=[]
 
+searchValue(value:string){
+  // console.log(value)
+  this.filteredDatat=this.suppliers.filter((supplier:Supplier)=>{
+
+    console.log(Object.values(supplier).some((val:string)=>{
+      val.toLowerCase().includes(value.toLowerCase())
+    }))
+    // return Object.values(supplier).some((val:string)=>{
+    //   val.toLowerCase().includes(value.toLowerCase())
+    // })
+
+  })
 }
-
 
 }
