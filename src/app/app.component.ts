@@ -47,18 +47,36 @@ suppliers:Supplier[]=[
 ]
 filteredDatat:Supplier[]=[]
 
+constructor(){
+  this.filteredDatat=this.suppliers
+}
+
 searchValue(value:string){
   // console.log(value)
+  // let oobj=this.filteredDatat[0]
+  // console.log(Object.values(oobj))
+  // let bjarry=Object.values(oobj)
+  // bjarry.some((val:any)=>{
+  //   console.log('val',val)
+  // })
+
   this.filteredDatat=this.suppliers.filter((supplier:Supplier)=>{
 
-    console.log(Object.values(supplier).some((val:string)=>{
-      val.toLowerCase().includes(value.toLowerCase())
-    }))
-    // return Object.values(supplier).some((val:string)=>{
-    //   val.toLowerCase().includes(value.toLowerCase())
-    // })
+    //  Object.values(supplier).some((val:any)=>{
+    //     val.toString().toLowerCase().includes(value.toLowerCase())
+    //   })
+
+
+    return  supplier.name.toLowerCase().includes(value.toLowerCase())
+
 
   })
+
+
+
+
+
+    console.log(this.filteredDatat)
 }
 
 }
