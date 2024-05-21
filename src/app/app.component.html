@@ -1,8 +1,8 @@
 <div class="app">
   <input type="text"
-  #input
-  (keyup)="searchValue(input.value)"
-  class="border-2  border-black w-full"
+  [(ngModel)]="search"
+  (keyup)="searchValue()"
+  class="border-2  border-black w-full px-2"
   >
   <table class="w-full">
     <thead>

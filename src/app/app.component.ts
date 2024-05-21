@@ -45,38 +45,23 @@ suppliers:Supplier[]=[
     email: 'superkingsely@gmail.com'
   },
 ]
+search:string=''
 filteredDatat:Supplier[]=[]
 
 constructor(){
-  this.filteredDatat=this.suppliers
+  this.filteredDatat=this.searchValue()
 }
 
-searchValue(value:string){
-  // console.log(value)
-  // let oobj=this.filteredDatat[0]
-  // console.log(Object.values(oobj))
-  // let bjarry=Object.values(oobj)
-  // bjarry.some((val:any)=>{
-  //   console.log('val',val)
-  // })
-
-  this.filteredDatat=this.suppliers.filter((supplier:Supplier)=>{
-
-    //  Object.values(supplier).some((val:any)=>{
-    //     val.toString().toLowerCase().includes(value.toLowerCase())
-    //   })
-
-
-    return  supplier.name.toLowerCase().includes(value.toLowerCase())
-
-
-  })
-
-
-
-
-
-    console.log(this.filteredDatat)
+searchValue(){
+  if(this.search==='' ){
+    return this.suppliers
+  }else{
+    return this.filteredDatat=this.suppliers.filter((suplier:Supplier)=>{
+      return Object.values(suplier).some((val:string)=>{
+        return val.toLowerCase().includes(this.search.toLowerCase())
+      })
+    })
+  }
 }
 
 }
