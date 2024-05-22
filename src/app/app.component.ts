@@ -106,57 +106,75 @@ export class AppComponent {
 
 clickcol!:boolean;
 displayValue: string='0'
-answer!: any;
+prevvalue:string=''
+currentval:string=''
+answer:string=''
+op:string=''
 constructor(){
 }
 
 handleclick(value:string){
-  let val1;
-  let opv;
-  let val2;
-  let isop:boolean=false;
-  this.btns.forEach((btn:Btn)=>{
-
-    if(+value===+btn.value ){
-      if(isop===true){
-        val2=+value
-        console.log('val2')
-
-      }else{
-
-        console.log('good')
-        val1=+value
-        console.log('val1')
-      }
-    }else{
-      opv=value
-      console.log('opv',opv)
-      isop=true
-    }
-  })
-  if(value==='='||value==='c'){
-    this.displayValue='0'
+  if(value==='c'){
+    this.clear()
+  }else if(value==='='){
+    this.cal()
+  }else if(['+','-','*','/','%'].includes(value)){
+    this.setop(value)
   }
   else{
+    this.mynos(value)
+  }
 
-    this.displayValue=value
-  }
-  console.log(value)
-  // this.op(val1,val2,opv)
 }
-op(val1:number,val2:number,op:string){
-  if(op==='+'){
-    this.answer=val1+val2
+clear(){
+  this.displayValue='0'
+  this.currentval=''
+  this.prevvalue=''
+  this.op=''
+  this.answer=''
+}
+cal(){
+console.log('calculating...')
+let num1=parseFloat(this.prevvalue)
+let num2=parseFloat(this.currentval)
+switch(this.op){
+  case '+':{
+    this.answer=(num1 + num2).toString()
+  }break;
+}
+}
+setop(op:string){
+  console.log('peratinon')
+if(this.currentval==="" && this.answer!==''){
+  this.prevvalue=this.answer
+  console.log('1st prev',this.prevvalue)
+}else{
+  this.prevvalue=this.currentval
+  console.log('else prev',this.prevvalue)
+
+}
+
+  this.op=op
+  this.currentval=''
+
+}
+mynos(value:string){
+  if(this.answer!==""){
+    this.clear()
+    // this.displayValue='0'
   }
+  this.currentval +=value
+  this.displayValue=this.currentval
+
 }
 down(){
   this.clickcol=true
+console.log(this.clickcol)
 
 }
 up(){
   this.clickcol=false
-// console.log(this.clickcol)
-
+console.log(this.clickcol)
 }
 
 

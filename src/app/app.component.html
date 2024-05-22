@@ -9,10 +9,10 @@
             'w-1/4':item.span===false,
             'hover:bg-green-300 ':clickcol
           }"
-          (click)="handleclick(ref.innerText)"
+          (click)="handleclick(item.value)"
           (mousedown)="down()"
           (mouseup)="up()"
-          #ref
+
           >
           {{item.value}}
         </div>
