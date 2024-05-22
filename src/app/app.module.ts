@@ -10,10 +10,18 @@ import {CollapseModule} from 'ngx-bootstrap/collapse';
 import {AccordionModule} from 'ngx-bootstrap/accordion';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HeaderComponent } from './header/header.component';
+import { MainComponent } from './main/main.component';
+import { FooterComponent } from './footer/footer.component';
+import { NavComponent } from './footer/nav/nav.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent,
+    NavComponent
   ],
   imports: [
     CommonModule,

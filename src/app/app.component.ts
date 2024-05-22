@@ -6,7 +6,7 @@ interface Supplier{
   email:string
 }
 @Component({
-  selector: 'app-root',
+  selector: '[root]',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

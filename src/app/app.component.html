@@ -1,27 +1,4 @@
-<div class="app">
-  <input type="text"
-  [(ngModel)]="search"
-  (keyup)="searchValue()"
-  class="border-2  border-black w-full px-2"
-  >
-  <table class="w-full">
-    <thead>
-      <tr class="bg-gray-200">
-        <th class="p-3 ">#</th>
-        <th class="p-3 ">name</th>
-        <th class="p-3 ">Address</th>
-        <th class="p-3 ">email</th>
-        <th class="p-3 ">phone</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of filteredDatat;let i=index">
-        <td class="p-2 text-left">{{i+1}}</td>
-        <td class="p-2 text-left">{{item.name}}</td>
-        <td class="p-2 text-left">{{item.address}}</td>
-        <td class="p-2 text-left">{{item.email}}</td>
-        <td class="p-2 text-left">{{item.phone}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<header header class="min-h-[10vh]  text-white"></header>
+<main main class="min-h-[70vh]"></main>
+<footer footer></footer>
+
