@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-interface Supplier{
-  name:string,
-  address:string,
-  phone:string,
-  email:string
+interface Btn{
+  value:string,
+  span:boolean,
+  nos:boolean
 }
 @Component({
   selector: 'app-root',
@@ -12,56 +11,153 @@ interface Supplier{
 })
 
 export class AppComponent {
-
-suppliers:Supplier[]=[
-  {
-    name: 'dami',
-    address: 'address1',
-    phone: '08029696733',
-    email: 'superkingsely@gmail.com'
+  btns:Btn[]=[
+    {
+    value: 'c',
+    span: true,
+    nos:false
   },
   {
-    name: 'naza',
-    address: 'address1',
-    phone: '08029696733',
-    email: 'superkingsely@gmail.com'
+    value: '%',
+    span: false,
+    nos: false
   },
   {
-    name: 'praise',
-    address: 'address1',
-    phone: '08029696733',
-    email: 'superkingsely@gmail.com'
+    value: '/',
+    span: false,
+    nos: false
   },
   {
-    name: 'ele',
-    address: 'address1',
-    phone: '08029696733',
-    email: 'superkingsely@gmail.com'
+    value: '7',
+    span: false,
+    nos: true
   },
   {
-    name: 'chi',
-    address: 'address1',
-    phone: '08029696733',
-    email: 'superkingsely@gmail.com'
+    value: '8',
+    span: false,
+    nos: true
+  },
+  {
+    value: '9',
+    span: false,
+    nos: true
+  },
+  {
+    value: '*',
+    span: false,
+    nos: true
+  },
+  {
+    value: '4',
+    span: false,
+    nos: true
+  },
+  {
+    value: '5',
+    span: false,
+    nos: true
+  },
+  {
+    value: '6',
+    span: false,
+    nos: true,
+  },
+  {
+    value: '-',
+    span: false,
+    nos: true
+  },
+  {
+    value: '1',
+    span: false,
+    nos: true
+  },
+  {
+    value: '2',
+    span: false,
+    nos: true
+  },
+  {
+    value: '3',
+    span: false,
+    nos: true
+  },
+  {
+    value: '+',
+    span: false,
+    nos: false
+  },
+  {
+    value: '0',
+    span: false,
+    nos: true
+  },
+  {
+    value: '.',
+    span: false,
+    nos: false
+  },
+  {
+    value: '=',
+    span: true,
+    nos: false
   },
 ]
-search:string=''
-filteredDatat:Supplier[]=[]
 
+clickcol!:boolean;
+displayValue: string='0'
+answer!: any;
 constructor(){
-  this.filteredDatat=this.searchValue()
 }
 
-searchValue(){
-  if(this.search==='' ){
-    return this.suppliers
-  }else{
-    return this.filteredDatat=this.suppliers.filter((suplier:Supplier)=>{
-      return Object.values(suplier).some((val:string)=>{
-        return val.toLowerCase().includes(this.search.toLowerCase())
-      })
-    })
+handleclick(value:string){
+  let val1;
+  let opv;
+  let val2;
+  let isop:boolean=false;
+  this.btns.forEach((btn:Btn)=>{
+
+    if(+value===+btn.value ){
+      if(isop===true){
+        val2=+value
+        console.log('val2')
+
+      }else{
+
+        console.log('good')
+        val1=+value
+        console.log('val1')
+      }
+    }else{
+      opv=value
+      console.log('opv',opv)
+      isop=true
+    }
+  })
+  if(value==='='||value==='c'){
+    this.displayValue='0'
+  }
+  else{
+
+    this.displayValue=value
+  }
+  console.log(value)
+  // this.op(val1,val2,opv)
+}
+op(val1:number,val2:number,op:string){
+  if(op==='+'){
+    this.answer=val1+val2
   }
 }
+down(){
+  this.clickcol=true
+
+}
+up(){
+  this.clickcol=false
+// console.log(this.clickcol)
+
+}
+
 
 }
