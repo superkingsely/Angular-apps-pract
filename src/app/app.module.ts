@@ -14,6 +14,17 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavComponent } from './footer/nav/nav.component';
+import { PcardComponent } from './components/pcard/pcard.component';
+import { SubFormComponent } from './components/sub-form/sub-form.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
+import { SinglecategoryComponent } from './pages/singlecategory/singlecategory.component';
+import { SinglepostComponent } from './pages/singlepost/singlepost.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { TermsandconditionComponent } from './pages/termsandcondition/termsandcondition.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +32,18 @@ import { NavComponent } from './footer/nav/nav.component';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    NavComponent
+    NavComponent,
+    PcardComponent,
+    SubFormComponent,
+    HomeComponent,
+    PagenotfoundComponent,
+    SinglecategoryComponent,
+    SinglepostComponent,
+    AboutComponent,
+    ContactComponent,
+    TermsandconditionComponent,
+    CommentFormComponent,
+    CommentListComponent
   ],
   imports: [
     CommonModule,
