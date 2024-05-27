@@ -147,10 +147,10 @@ setop(op:string){
   console.log('peratinon')
 if(this.currentval==="" && this.answer!==''){
   this.prevvalue=this.answer
-  console.log('1st prev',this.prevvalue)
+
 }else{
   this.prevvalue=this.currentval
-  console.log('else prev',this.prevvalue)
+  
 
 }
 
