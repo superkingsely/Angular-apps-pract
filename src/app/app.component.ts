@@ -110,72 +110,121 @@ prevvalue:string=''
 currentval:string=''
 answer:string=''
 op:string=''
+num1!:number;
+num2!:number;
 constructor(){
 }
 
-handleclick(value:string){
-  if(value==='c'){
-    this.clear()
-  }else if(value==='='){
-    this.cal()
-  }else if(['+','-','*','/','%'].includes(value)){
-    this.setop(value)
-  }
-  else{
-    this.mynos(value)
-  }
+handleclick(obj:any){
+  this.clickcol=true
+  if(obj.nos===true){
 
+    if(this.num1!==undefined && this.op!==''){
+    console.log('second nos')
+    // this.currentval+=obj.value
+    this.displayValue+=obj.value
+    this.num2=+this.displayValue
+
+    console.log(this.num2)
+    }else{
+      this.currentval+=obj.value
+      this.displayValue=this.currentval
+      this.num1=+this.displayValue
+    }
+    console.log(this.num1)
+  }else if(obj.value==='c'){
+    this.clear()
+  }else if(['+','-','*','/'].includes(obj.value)){
+    this.op=obj.value
+    this.displayValue=obj.value
+    console.log(this.op)
+  }else if(obj.value==='='){
+    this.cal()
+  }
 }
+
 clear(){
-  this.displayValue='0'
-  this.currentval=''
-  this.prevvalue=''
-  this.op=''
-  this.answer=''
-}
+    this.displayValue='0'
+    this.currentval=''
+    this.prevvalue=''
+    this.op=''
+    this.answer=''
+  }
 cal(){
 console.log('calculating...')
-let num1=parseFloat(this.prevvalue)
-let num2=parseFloat(this.currentval)
+// let num1=parseFloat(this.prevvalue)
+// let num2=parseFloat(this.currentval)
 switch(this.op){
   case '+':{
-    this.answer=(num1 + num2).toString()
+    this.answer=(this.num1 + this.num2).toString()
   }break;
 }
-}
-setop(op:string){
-  console.log('peratinon')
-if(this.currentval==="" && this.answer!==''){
-  this.prevvalue=this.answer
-
-}else{
-  this.prevvalue=this.currentval
-  
 
 }
 
-  this.op=op
-  this.currentval=''
+// handleclick(value:string){
+//   if(value==='c'){
+//     this.clear()
+//   }else if(value==='='){
+//     this.cal()
+//   }else if(['+','-','*','/','%'].includes(value)){
+//     this.setop(value)
+//   }
+//   else{
+//     this.mynos(value)
+//   }
 
-}
-mynos(value:string){
-  if(this.answer!==""){
-    this.clear()
-    // this.displayValue='0'
-  }
-  this.currentval +=value
-  this.displayValue=this.currentval
+// }
+// clear(){
+//   this.displayValue='0'
+//   this.currentval=''
+//   this.prevvalue=''
+//   this.op=''
+//   this.answer=''
+// }
+// cal(){
+// console.log('calculating...')
+// let num1=parseFloat(this.prevvalue)
+// let num2=parseFloat(this.currentval)
+// switch(this.op){
+//   case '+':{
+//     this.answer=(num1 + num2).toString()
+//   }break;
+// }
+// }
+// setop(op:string){
+//   console.log('peratinon')
+// if(this.currentval==="" && this.answer!==''){
+//   this.prevvalue=this.answer
 
-}
-down(){
-  this.clickcol=true
-console.log(this.clickcol)
+// }else{
+//   this.prevvalue=this.currentval
 
-}
-up(){
-  this.clickcol=false
-console.log(this.clickcol)
-}
+
+// }
+
+//   this.op=op
+//   this.currentval=''
+
+// }
+// mynos(value:string){
+//   if(this.answer!==""){
+//     this.clear()
+//     // this.displayValue='0'
+//   }
+//   this.currentval +=value
+//   this.displayValue=this.currentval
+
+// }
+// down(){
+//   this.clickcol=true
+// console.log(this.clickcol)
+
+// }
+// up(){
+//   this.clickcol=false
+// console.log(this.clickcol)
+// }
 
 
 }

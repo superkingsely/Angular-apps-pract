@@ -4,14 +4,12 @@
       <div class="screen-2 h-[10vh] bg-slate-200 flex items-end justify-end text-3xl p-2">{{answer}}</div>
       <div class="button-container row  mx-auto  mt-2">
         <ng-container *ngFor="let item of btns" >
-          <div class="user-select-none hover:bg-slate-200 hover:text-black font-semibold border col-3  cursor-pointer " [ngClass]="{
+          <div class="user-select-none hover:bg-slate-200 hover:text-black font-semibold border col-3  cursor-pointer text-neutral-50" [ngClass]="{
             'w-1/2':item.span===true,
             'w-1/4':item.span===false,
             'hover:bg-green-300 ':clickcol
           }"
-          (click)="handleclick(item.value)"
-          (mousedown)="down()"
-          (mouseup)="up()"
+          (click)="handleclick(item)"
 
           >
           {{item.value}}
